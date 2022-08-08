@@ -10,22 +10,27 @@
         @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
         </style>
     <title>Project 1</title>
-    
+   
 </head>
 <body>
-    <h1>Slot Machine</h1>
+    <h1>Garden Games</h1>
     <!--Panel that displays how to play--->
 
 <div>
-    <div><!--Container:Spin button and Reset button(form??)-->
-        <form>
-        <button id="spin">Spin</button>
-        </form>
+    
+    <div class="outer-display-container">
+    <div class="display-container">
+    <!--Container:Lanes for images-->
+        <p class="display" id="display1">-</p>
+        <p class="display" id="display2">-</p>
+        <p class="display" id="display3">-</p>
     </div>
-    <div><!--Container:Lanes for images-->
-        <p id="display1">-</p>
-        <p id="display2">-</p>
-        <p id="display3">-</p>
+   
+    </div>
+    <div class="spin-and-reset"><!--Container:Spin button and Reset button(form??)-->
+        <form>
+        <button class="gamebtn"id="spin">Grow</button>
+        </form>
     </div>
 </div>
 </body>

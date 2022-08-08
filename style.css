@@ -4,3 +4,62 @@ body {
     background-color: rgb(125, 197, 149);
 }
 
+h1{
+    text-shadow: 2px 2px green;
+    font-size: 40px;
+}
+
+.display-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+    height:400px;
+    align-items: center;
+    background-color: rgb(222, 167, 90);
+    margin:20px;
+    padding:40px;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.display{
+    grid-column: auto;
+    margin:0px;
+    font-size: 70px;
+    text-align:center;
+    background-color: bisque;
+    box-shadow: 2px 3px  burlywood ;
+    height:300px;
+    width:250px;
+    
+}
+
+.spin-and-reset{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+ form{
+    display: grid;
+    justify-items: center;
+    grid-column: 2;
+    padding:40px;
+}
+.gamebtn{
+    height:100px;
+    width: 100px;
+    border-radius:50%;
+    font-family: 'Acme';
+    font-size: 40px;
+    transition-duration: .1s;
+    border: none;
+    box-shadow: 2px 2px 2px 2px darkgreen;
+    background-color:peru;
+    color:blanchedalmond;
+}
+.gamebtn:hover {
+    color:darkgreen;
+}
+ 
