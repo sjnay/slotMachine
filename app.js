@@ -13,47 +13,62 @@ const spinBtn=document.getElementById("spin");
 
 
 
-// generate a random number between 0&9
+// generate a random number between 0&4
 function randomNumber(){ 
-    return Math.floor(Math.random()*10)
+    return Math.floor(Math.random()*4)
 }
 // finds s lanes in html
 function findElement(id){
     return document.getElementById(id);
+
 }
 
-
-
-class Spin{
-    constructor(num1,num2,num3){
-
-    this.lane1=num1;
-    this.lane2=num2;
-    this.lane3=num3;
-    
+function pic1(num){
+    if(num === 0){
+    return "SUN";
+} else if (num === 1){
+  return "TOOLS";
+} else if (num === 2){
+  return "SOIL";
+} else {return "GNOME";
     }
 }
-let combo = new Spin(randomNumber(),randomNumber(),randomNumber());
 
-spinBtn.addEventListener("click",laneDisplay());
+function pic2(num){
+    if(num === 0){
+    return "WATER";
+} else if (num === 1){
+  return "BUTTERFLY";
+} else if (num === 2){
+  return "BUGS";
+} else {return "GNOME";
+    }
 
-function laneDisplay(){
+}
+
+function pic3(num){
+    if(num === 0){
+    return "BEE";
+} else if (num === 1){
+  return "SEEDS";
+} else if (num === 2){
+  return "CRITTERS";
+} else {return "GNOME";
+    }
+
+}
+
+function playGame(){
     const display1 = findElement("display1");
     const display2 = findElement("display2");
     const display3 = findElement("display3");
-   
-    display1.innerHTML = `${combo.lane1}`;
-    display2.innerHTML = `${combo.lane2}`;
-    display3.innerHTML = `${combo.lane3}`;
+
+    display1.innerHTML = `${pic1(randomNumber())}`;
+    display2.innerHTML = `${pic2(randomNumber())}`;
+    display3.innerHTML = `${pic3(randomNumber())}`;
 }
 
-
-
-
-
-
-
-
+spinBtn.addEventListener("click",playGame());
 
 
 

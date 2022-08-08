@@ -26,7 +26,7 @@ h1{
 .display{
     grid-column: auto;
     margin:0px;
-    font-size: 70px;
+    font-size: 40px;
     text-align:center;
     background-color: bisque;
     box-shadow: 2px 3px  burlywood ;
