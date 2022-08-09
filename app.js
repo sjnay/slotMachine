@@ -58,7 +58,10 @@ function pic3(num){
 
 }
 
+
+
 function playGame(){
+    
     const display1 = findElement("display1");
     const display2 = findElement("display2");
     const display3 = findElement("display3");
@@ -68,7 +71,38 @@ function playGame(){
     display3.innerHTML = `${pic3(randomNumber())}`;
 }
 
+
 spinBtn.addEventListener("click",playGame());
+
+
+let totalPoints=0;
+
+function addPoints(points){
+   totalPoints += points;    
+}
+
+function removePoints(points){
+    totalPoints -= points;
+}
+
+function keepScore(){
+if(display1.innerHTML === "SUN"){
+    addPoints(3);
+} else if (display1.innerHTML === "TOOLS"){
+    addPoints(1);
+}
+    return totalPoints;
+
+}
+
+document.querySelector(".game-overview").innerHTML = keepScore();
+
+
+
+
+
+
+
 
 
 
