@@ -23,40 +23,14 @@ function findElement(id){
 
 }
 
-function pic1(num){
-    if(num === 0){
-    return "SUN";
-} else if (num === 1){
-  return "TOOLS";
-} else if (num === 2){
-  return "SOIL";
-} else {return "GNOME";
-    }
-}
+const itemsLane1 =["Sun","Tools","Soil","Gnome"]
+const pointsLane1 =[3,1,1,2]
+const itemsLane2 =["Water","Butterfly","Bugs","Gnome"]
+const pointsLane2 =[3,2,-1,2]
+const itemsLane3 =["Bees","Seeds","Critters","Gnome"]
+const pointsLane3 =[2,1,-2,2]
 
-function pic2(num){
-    if(num === 0){
-    return "WATER";
-} else if (num === 1){
-  return "BUTTERFLY";
-} else if (num === 2){
-  return "BUGS";
-} else {return "GNOME";
-    }
 
-}
-
-function pic3(num){
-    if(num === 0){
-    return "BEE";
-} else if (num === 1){
-  return "SEEDS";
-} else if (num === 2){
-  return "CRITTERS";
-} else {return "GNOME";
-    }
-
-}
 
 
 
@@ -66,13 +40,12 @@ function playGame(){
     const display2 = findElement("display2");
     const display3 = findElement("display3");
 
-    display1.innerHTML = `${pic1(randomNumber())}`;
-    display2.innerHTML = `${pic2(randomNumber())}`;
-    display3.innerHTML = `${pic3(randomNumber())}`;
+    display1.innerHTML = `${itemsLane1[randomNumber()]}`;
+    display2.innerHTML = `${itemsLane2[randomNumber()]}`;
+    display3.innerHTML = `${itemsLane3[randomNumber()]}`;
 }
 
 
-spinBtn.addEventListener("click",playGame());
 
 
 let totalPoints=0;
@@ -85,15 +58,7 @@ function removePoints(points){
     totalPoints -= points;
 }
 
-function keepScore(){
-if(display1.innerHTML === "SUN"){
-    addPoints(3);
-} else if (display1.innerHTML === "TOOLS"){
-    addPoints(1);
-}
-    return totalPoints;
-
-}
+spinBtn.addEventListener("click",playGame());
 
 document.querySelector(".game-overview").innerHTML = keepScore();
 
