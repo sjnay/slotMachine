@@ -45,7 +45,7 @@ h1{
     display: grid;
     justify-items: center;
     grid-column: 2;
-    padding:40px;
+    padding:20px;
 }
 .gamebtn{
     height:100px;
