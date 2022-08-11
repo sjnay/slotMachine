@@ -30,7 +30,7 @@ const itemsLane2 =["Water","Butterfly","Bugs","Gloves"];
 const pointsLane2 =[3,2,-1,1];
 const itemsLane3 =["Bees","Seeds","Critters","Soil"];
 const pointsLane3 =[2,1,-2,1];
-const crops=["Tomatoes","Marigolds","Cucumber","Sunflowers"]
+const crops=["Tomatoes","Marigolds","Cucumbers","Sunflowers"]
 
 let pointsArray = []
 
@@ -39,7 +39,7 @@ function keepScoreLane1(){
         pointsArray.push(pointsLane1[0]); //3
     } else if (display1.innerHTML === itemsLane1[1]){ //tools
         pointsArray.push(pointsLane1[1]); // 1
-    } else if (display1.innerHTML === itemsLane1[2]){ //soil
+    } else if (display1.innerHTML === itemsLane1[2]){ //weeds
         pointsArray.push(pointsLane1[2]); //1
     } else {pointsArray.push(pointsLane1[3]);} //gnome
 }
@@ -51,7 +51,7 @@ function keepScoreLane2(){
         pointsArray.push(pointsLane2[1]); //2
     } else if (display2.innerHTML === itemsLane2[2]){ //bugs
         pointsArray.push(pointsLane2[2]); // -1
-    } else {pointsArray.push(pointsLane1[3]);} // gnome
+    } else {pointsArray.push(pointsLane1[3]);} // gloves
 }
 
 function keepScoreLane3(){
@@ -61,7 +61,7 @@ function keepScoreLane3(){
         pointsArray.push(pointsLane3[1])// 1
     } else if (display3.innerHTML === itemsLane3[2]){ // critters
         pointsArray.push(pointsLane3[2]) //-2
-    } else  pointsArray.push(pointsLane1[3]); //gnome 
+    } else  pointsArray.push(pointsLane1[3]); //soil 
     
 }
 
@@ -74,7 +74,6 @@ function motivate(){
         findElement("game-messages").innerHTML="Keep going! Your garden is thriving! "
     } else {findElement("game-messages").innerHTML="Let's make a garden!"}
 }
-
 
 
 
@@ -96,39 +95,53 @@ spinBtn.addEventListener("click",function(event){
     keepScoreLane3();
     motivate();
 
+    // keeping score by pushing each value associated with them items to an array and using reduce 
+    // function to have a running total
     const initialValue = 0;
     let totalPoints = pointsArray.reduce(
       (previousValue, currentValue) => previousValue + currentValue,
       initialValue
     );
-
     scoreBoard.innerHTML=totalPoints;
-   
-   
+    
+    
+    
+    
+    // player status and point up dates
+
     const cropsGrown=document.createElement("li")
     const cropsGrownList=document.querySelector("#crop-list")
-    const placeHold=document.createElement('li')
+    
     
     if(totalPoints<=50){
-    cropsGrown.textContent=`You are ${50-totalPoints} points from growing ${crops[0]}!`
+    cropsGrown.textContent=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
     cropsGrownList.appendChild(cropsGrown);
     cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    
-    
-    
-
-        
-    
-    if (totalPoints>=150){
-        findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
-       } 
-}})
-
-
-
-
-
+    } else if (totalPoints > 50 && totalPoints <=100){
+    findElement("garden-item-1").innerHTML=`Nice! You harvested ${crops[0]}! `
+    cropsGrown.textContent=`You are ${100-totalPoints} points from growing ${crops[1]}!`
+    cropsGrownList.appendChild(cropsGrown);
+    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
+    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    } else if (totalPoints >100 && totalPoints <= 150){
+    findElement("garden-item-2").innerHTML=`You are on a roll! Now you have ${crops[1]}!`
+    cropsGrown.textContent=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
+    cropsGrownList.appendChild(cropsGrown);
+    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
+    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    } else if (totalPoints > 150 && totalPoints <= 200){
+    findElement("garden-item-3").innerHTML=`Amazing! You grew ${crops[2]}!`
+    cropsGrown.textContent=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
+    cropsGrownList.appendChild(cropsGrown);
+    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
+    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    } else if (totalPoints>=200){
+    findElement("garden-item-4").innerHTML=`Look at you grow! You did it, you grew ${crops[3]}!`
+    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
+    } 
+})
 
 
 
