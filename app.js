@@ -11,6 +11,7 @@ console.log("js loaded"); //test
 //global variables
 const spinBtn=document.getElementById("spin");
 const scoreBoard=document.querySelector("#total-points")
+const newGame=document.getElementById("new-game")
 
 
 
@@ -75,8 +76,19 @@ function motivate(){
     } else {findElement("game-messages").innerHTML="Let's make a garden!"}
 }
 
-
-
+function gameOverCombo(){
+    if (display1.innerHTML === itemsLane1[2] && display2.innerHTML === itemsLane2[2] && display3.innerHTML ===itemsLane3[2]){
+        display1.innerHTML="-";
+        display2.innerHTML="-";
+        display3.innerHTML="-";
+        window.confirm(`Your garden is infested with ${itemsLane1[2]}, ${itemsLane2[2]}, and ${itemsLane3[2]}\n Oh my!\n Play Again!`);
+        pointsArray.splice(0,pointsArray.length);
+        findElement("garden-item-1").innerHTML=""
+        findElement("garden-item-2").innerHTML=""
+        findElement("garden-item-3").innerHTML=""
+        findElement("garden-item-4").innerHTML=""
+    }
+}
 
 
 spinBtn.addEventListener("click",function(event){
@@ -94,6 +106,9 @@ spinBtn.addEventListener("click",function(event){
     keepScoreLane2();
     keepScoreLane3();
     motivate();
+    
+
+    
 
     // keeping score by pushing each value associated with them items to an array and using reduce 
     // function to have a running total
@@ -118,34 +133,57 @@ spinBtn.addEventListener("click",function(event){
     cropsGrownList.appendChild(cropsGrown);
     cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    } else if (totalPoints > 50 && totalPoints <=100){
+    } else if (totalPoints >= 50 && totalPoints < 100){
     findElement("garden-item-1").innerHTML=`Nice! You harvested ${crops[0]}! `
     cropsGrown.textContent=`You are ${100-totalPoints} points from growing ${crops[1]}!`
     cropsGrownList.appendChild(cropsGrown);
     cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    } else if (totalPoints >100 && totalPoints <= 150){
+    } else if (totalPoints >=100 && totalPoints < 150){
     findElement("garden-item-2").innerHTML=`You are on a roll! Now you have ${crops[1]}!`
     cropsGrown.textContent=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
     cropsGrownList.appendChild(cropsGrown);
     cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    } else if (totalPoints > 150 && totalPoints <= 200){
-    findElement("garden-item-3").innerHTML=`Amazing! You grew ${crops[2]}!`
+    } else if (totalPoints >= 150 && totalPoints < 200){
+    findElement("garden-item-3").innerHTML=""
     cropsGrown.textContent=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
     cropsGrownList.appendChild(cropsGrown);
     cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    } else if (totalPoints>=200){
+    } else if (totalPoints >= 200 && totalPoints < 209){
     findElement("garden-item-4").innerHTML=`Look at you grow! You did it, you grew ${crops[3]}!`
     cropsGrownList.removeChild(cropsGrownList.lastElementChild);
     findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
+    pointsArray.splice(0,pointsArray.length);
+    findElement("garden-item-1").innerHTML=""
+    findElement("garden-item-2").innerHTML=""
+    findElement("garden-item-3").innerHTML=""
+    findElement("garden-item-4").innerHTML=""
     } 
+
+    gameOverCombo();
+    
 })
 
 
+newGame.addEventListener("click",function(event){
+    event.preventDefault();
+    display1.innerHTML = "-"
+    display2.innerHTML = "-"
+    display3.innerHTML = "-"
 
+    pointsArray.splice(0,pointsArray.length);
+    findElement("garden-item-1").innerHTML=""
+    findElement("garden-item-2").innerHTML=""
+    findElement("garden-item-3").innerHTML=""
+    findElement("garden-item-4").innerHTML=""
 
+    scoreBoard.innerHTML=""
+    
+
+})
+   
 
 
 
