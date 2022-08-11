@@ -87,13 +87,13 @@ function gameOverCombo(){
         findElement("garden-item-2").innerHTML="";
         findElement("garden-item-3").innerHTML="";
         findElement("garden-item-4").innerHTML="Your garden is empty!";
-        findElement("points-to-crop").innerHTML="";
-        scoreBoard.innerHTML=0;
+        findElement("points-to-crop").innerHTML="Bummer!";
+        scoreBoard.innerHTML="";
     }
 }
 
 
-const cropsGrownList=document.querySelector("#crop-list")
+
 
 
 spinBtn.addEventListener("click",function(event){
@@ -131,8 +131,7 @@ spinBtn.addEventListener("click",function(event){
 
     
     
-    //const cropsGrown=document.createElement("li")
-
+    
     if(totalPoints<=50){
         findElement("crops-grown").innerHTML=""
     findElement("points-to-crop").textContent=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
@@ -179,7 +178,7 @@ newGame.addEventListener("click",function(event){
     findElement("garden-item-4").innerHTML="Your garden is empty!"
 
     
-    cropsGrownList.innerHTML="Lets grow!"
+    
     findElement("points-to-crop").textContent=""
     scoreBoard.innerHTML=""
     findElement("crops-grown").innerHTML=""
