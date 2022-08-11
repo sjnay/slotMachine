@@ -14,31 +14,37 @@
 </head>
 <body>
     <h1>Garden Games</h1>
-    <div class="scoreboard"></div>
-    <div id="game-messages"></div>
-    <!--Panel that displays how to play--->
+    <div class="gameinfo-container">
+        <div class="scoreboard"></div>
+        <div id="game-messages"></div>
+    </div>
+ <!--Panel that displays how to play--->
 
-<div>
+
     
     <div class="outer-display-container">
-    <div class="display-container">
-    <!--Container:Lanes for images-->
-        <p class="display" id="display1">-</p>
-        <p class="display" id="display2">-</p>
-        <p class="display" id="display3">-</p>
-    </div>
-    <div class="player-stats">
-        <p class="stats" id="points-to-crop"></p>
-        <p class="stats" id="crops-grown"></p>
-        <p class="stats" id="total-points"> </p>
-    </div>
-   
-    </div>
-    <div class="spin-and-reset"><!--Container:Spin button and Reset button(form??)-->
-       <form>
-        <button class="gamebtn"id="spin">Grow</button>
-    </form> 
-    </div>
-</div>
+        <div class="display-container">
+            <p class="display" id="display1">-</p>
+            <p class="display" id="display2">-</p>
+            <p class="display" id="display3">-</p>
+        </div>
+        <div class="player-stats">
+            <p class="stats" id="points-to-crop"></p>
+            <p class="stats" id="crops-grown"></p>
+                <ul id="crops-grown-list">
+                    <li>Your garden is empty!</li>
+                </ul>
+                <ul id="crop-list">
+                    <li>Lets Grow!</li>
+                </ul>
+            <p class="stats" id="total-points"></p>
+        </div>
+   </div>
+        <div class="spin-and-reset"><!--Container:Spin button and Reset button(form??)-->
+            <form>
+            <button class="gamebtn"id="spin">Grow</button>
+            </form> 
+        </div>
+
 </body>
 </html>

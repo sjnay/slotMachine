@@ -10,7 +10,8 @@ console.log("js loaded"); //test
 
 //global variables
 const spinBtn=document.getElementById("spin");
-const scoreBoard=document.querySelector(".scoreboard");
+const scoreBoard=document.querySelector("#total-points")
+
 
 
 // generate a random number between 0&4
@@ -23,12 +24,13 @@ function findElement(id){
 
 }
 
-const itemsLane1 =["Sun","Tools","Soil","Gnome"];
-const pointsLane1 =[3,1,1,2];
-const itemsLane2 =["Water","Butterfly","Bugs","Gnome"];
-const pointsLane2 =[3,2,-1,2];
-const itemsLane3 =["Bees","Seeds","Critters","Gnome"];
-const pointsLane3 =[2,1,-2,2];
+const itemsLane1 =["Sun","Tools","Weeds","Gnome"];
+const pointsLane1 =[3,1,-2,2];
+const itemsLane2 =["Water","Butterfly","Bugs","Gloves"];
+const pointsLane2 =[3,2,-1,1];
+const itemsLane3 =["Bees","Seeds","Critters","Soil"];
+const pointsLane3 =[2,1,-2,1];
+const crops=["Tomatoes","Marigolds","Cucumber","Sunflowers"]
 
 let pointsArray = []
 
@@ -63,12 +65,20 @@ function keepScoreLane3(){
     
 }
 
-function gameOver(){
+function motivate(){
     if (display1.innerHTML === itemsLane1[2] && display2.innerHTML === itemsLane2[2] && display3.innerHTML ===itemsLane3[2]){
-        findElement("game-messages").innerText =  "Aw shucks! Your garden is dead! Game over!"
-    } else {findElement("game-messages").innerText =""};
-
+        findElement("game-messages").innerHTML="Aw shucks! Your garden is dead! Game Over!"
+    } else if(display1.innerHTML === itemsLane1[0] && display2.innerHTML === itemsLane2[0] && display3.innerHTML === itemsLane3[1]) {
+        findElement("game-messages").innerHTML="Essential items for your garden!";
+    } else if(display1.innerHTML === itemsLane1[0] && display2.innerHTML === itemsLane2[1] && display3.innerHTML === itemsLane3[0]){
+        findElement("game-messages").innerHTML="Keep going! Your garden is thriving! "
+    } else {findElement("game-messages").innerHTML="Let's make a garden!"}
 }
+
+
+
+
+
 
 spinBtn.addEventListener("click",function(event){
     event.preventDefault()
@@ -84,35 +94,36 @@ spinBtn.addEventListener("click",function(event){
     keepScoreLane1(); 
     keepScoreLane2();
     keepScoreLane3();
-    gameOver();
+    motivate();
+
     const initialValue = 0;
-    let sumWithInitial = pointsArray.reduce(
+    let totalPoints = pointsArray.reduce(
       (previousValue, currentValue) => previousValue + currentValue,
       initialValue
     );
+
+    scoreBoard.innerHTML=totalPoints;
+   
+   
+    const cropsGrown=document.createElement("li")
+    const cropsGrownList=document.querySelector("#crop-list")
+    const placeHold=document.createElement('li')
     
-    scoreBoard.innerHTML=sumWithInitial;
+    if(totalPoints<=50){
+    cropsGrown.textContent=`You are ${50-totalPoints} points from growing ${crops[0]}!`
+    cropsGrownList.appendChild(cropsGrown);
+    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
+    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
     
     
-})
+    
 
-
-
-console.log(pointsArray);
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
+        
+    
+    if (totalPoints>=150){
+        findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
+       } 
+}})
 
 
 

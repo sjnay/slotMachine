@@ -62,4 +62,7 @@ h1{
 .gamebtn:hover {
     color:darkgreen;
 }
- 
+
+#crop-list{
+    list-style: none;
+}
