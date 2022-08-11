@@ -83,12 +83,17 @@ function gameOverCombo(){
         display3.innerHTML="-";
         window.confirm(`Your garden is infested with ${itemsLane1[2]}, ${itemsLane2[2]}, and ${itemsLane3[2]}\n Oh my!\n Play Again!`);
         pointsArray.splice(0,pointsArray.length);
-        findElement("garden-item-1").innerHTML=""
-        findElement("garden-item-2").innerHTML=""
-        findElement("garden-item-3").innerHTML=""
-        findElement("garden-item-4").innerHTML=""
+        findElement("garden-item-1").innerHTML="";
+        findElement("garden-item-2").innerHTML="";
+        findElement("garden-item-3").innerHTML="";
+        findElement("garden-item-4").innerHTML="Your garden is empty!";
+        findElement("points-to-crop").innerHTML="";
+        scoreBoard.innerHTML=0;
     }
 }
+
+
+const cropsGrownList=document.querySelector("#crop-list")
 
 
 spinBtn.addEventListener("click",function(event){
@@ -124,36 +129,30 @@ spinBtn.addEventListener("click",function(event){
     
     // player status and point up dates
 
-    const cropsGrown=document.createElement("li")
-    const cropsGrownList=document.querySelector("#crop-list")
     
     
+    //const cropsGrown=document.createElement("li")
+
     if(totalPoints<=50){
-    cropsGrown.textContent=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
-    cropsGrownList.appendChild(cropsGrown);
-    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
-    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+        findElement("crops-grown").innerHTML=""
+    findElement("points-to-crop").textContent=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
+    
     } else if (totalPoints >= 50 && totalPoints < 100){
-    findElement("garden-item-1").innerHTML=`Nice! You harvested ${crops[0]}! `
-    cropsGrown.textContent=`You are ${100-totalPoints} points from growing ${crops[1]}!`
-    cropsGrownList.appendChild(cropsGrown);
-    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
-    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    findElement("garden-item-4").innerHTML=`Nice! You harvested ${crops[0]}! `
+    findElement("points-to-crop").textContent=`You are ${100-totalPoints} points from growing ${crops[1]}!`
+    
     } else if (totalPoints >=100 && totalPoints < 150){
-    findElement("garden-item-2").innerHTML=`You are on a roll! Now you have ${crops[1]}!`
-    cropsGrown.textContent=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
-    cropsGrownList.appendChild(cropsGrown);
-    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
-    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    findElement("garden-item-3").innerHTML=`You are on a roll! Now you have ${crops[1]}!`
+    findElement("points-to-crop").textContent=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
+    
     } else if (totalPoints >= 150 && totalPoints < 200){
-    findElement("garden-item-3").innerHTML=""
-    cropsGrown.textContent=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
-    cropsGrownList.appendChild(cropsGrown);
-    cropsGrownList.insertBefore(cropsGrown,cropsGrownList.firstElementChild);
-    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
-    } else if (totalPoints >= 200 && totalPoints < 209){
-    findElement("garden-item-4").innerHTML=`Look at you grow! You did it, you grew ${crops[3]}!`
-    cropsGrownList.removeChild(cropsGrownList.lastElementChild);
+    findElement("garden-item-2").innerHTML=`You did it! You grew ${crops[2]}`
+    findElement("points-to-crop").textContent=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
+    
+    } else if (totalPoints > 200 && totalPoints < 209){
+    findElement("garden-item-1").innerHTML=`Look at you grow! You did it, you grew ${crops[3]}!`
+    
+    findElement("points-to-crop").textContent=""
     findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
     pointsArray.splice(0,pointsArray.length);
     findElement("garden-item-1").innerHTML=""
@@ -177,9 +176,13 @@ newGame.addEventListener("click",function(event){
     findElement("garden-item-1").innerHTML=""
     findElement("garden-item-2").innerHTML=""
     findElement("garden-item-3").innerHTML=""
-    findElement("garden-item-4").innerHTML=""
+    findElement("garden-item-4").innerHTML="Your garden is empty!"
 
+    
+    cropsGrownList.innerHTML="Lets grow!"
+    findElement("points-to-crop").textContent=""
     scoreBoard.innerHTML=""
+    findElement("crops-grown").innerHTML=""
     
 
 })
