@@ -22,7 +22,7 @@ As more points accumulate, you start to see the crops the player has grown on th
 As the user reaches point checkpoints in intervals of 50, they are updated with what crops they have grown and how many points until their next crop.
 
 <img width="1120" alt="Screen Shot 2022-08-12 at 3 20 45 AM" src="https://user-images.githubusercontent.com/109879644/184316632-22724008-e7db-40d1-8f9d-1e9b6994a62c.png">
-When the player has made it all the way through the game, reaching 200 points. This is the view they see. The game resets at this point. 
+When the player has made it all the way through the game, reaching 200 points, this is the view they see and the game resets.
 
 <img width="1213" alt="Screen Shot 2022-08-12 at 3 21 31 AM" src="https://user-images.githubusercontent.com/109879644/184316687-68f5fefc-8635-4222-83ea-fa68dfa85bb6.png">
 The combination of weeds, pests and critters is game ending. This is the screen the user sees and the game resets.
