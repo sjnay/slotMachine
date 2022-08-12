@@ -32,7 +32,6 @@ const pointsLane2 =[3,2,-1,1];
 const itemsLane3 =["Bees","Seeds","Critters","Soil"];
 const pointsLane3 =[2,1,-2,1];
 const crops=["Tomatoes","Marigolds","Cucumbers","Sunflowers"]
-
 let pointsArray = []
 
 function keepScoreLane1(){
@@ -68,12 +67,12 @@ function keepScoreLane3(){
 
 function motivate(){
     if (display1.innerHTML === itemsLane1[2] && display2.innerHTML === itemsLane2[2] && display3.innerHTML ===itemsLane3[2]){
-        findElement("game-messages").innerHTML="Aw shucks! Your garden is dead! Game Over!"
+        findElement("game-messages").innerHTML="Your garden is dead! Game Over!"
     } else if(display1.innerHTML === itemsLane1[0] && display2.innerHTML === itemsLane2[0] && display3.innerHTML === itemsLane3[1]) {
         findElement("game-messages").innerHTML="Essential items for your garden!";
     } else if(display1.innerHTML === itemsLane1[0] && display2.innerHTML === itemsLane2[1] && display3.innerHTML === itemsLane3[0]){
         findElement("game-messages").innerHTML="Keep going! Your garden is thriving! "
-    } else {findElement("game-messages").innerHTML="Let's make a garden!"}
+    } else {findElement("game-messages").innerHTML="Get to growing!";}
 }
 
 function gameOverCombo(){
@@ -92,10 +91,6 @@ function gameOverCombo(){
     }
 }
 
-
-
-
-
 spinBtn.addEventListener("click",function(event){
     event.preventDefault()
 
@@ -112,9 +107,6 @@ spinBtn.addEventListener("click",function(event){
     keepScoreLane3();
     motivate();
     
-
-    
-
     // keeping score by pushing each value associated with them items to an array and using reduce 
     // function to have a running total
     const initialValue = 0;
@@ -122,42 +114,36 @@ spinBtn.addEventListener("click",function(event){
       (previousValue, currentValue) => previousValue + currentValue,
       initialValue
     );
-    scoreBoard.innerHTML=totalPoints;
-    
-    
-    
+    //scoreBoard.innerHTML=totalPoints;
     
     // player status and point up dates
-
-    
-    
     
     if(totalPoints<=50){
-        findElement("crops-grown").innerHTML=""
-    findElement("points-to-crop").textContent=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
+        findElement("garden-item-4").innerHTML="Your garden is empty!"   
+    findElement("points-to-crop").innerHTML=`You are ${50-totalPoints} points from your first crop, ${crops[0]}!`
     
     } else if (totalPoints >= 50 && totalPoints < 100){
     findElement("garden-item-4").innerHTML=`Nice! You harvested ${crops[0]}! `
-    findElement("points-to-crop").textContent=`You are ${100-totalPoints} points from growing ${crops[1]}!`
+    findElement("points-to-crop").innerHTML=`You are ${100-totalPoints} points from growing ${crops[1]}!`
     
     } else if (totalPoints >=100 && totalPoints < 150){
     findElement("garden-item-3").innerHTML=`You are on a roll! Now you have ${crops[1]}!`
-    findElement("points-to-crop").textContent=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
+    findElement("points-to-crop").innerHTML=`You are ${150-totalPoints} points from harvesting ${crops[2]}!`
     
     } else if (totalPoints >= 150 && totalPoints < 200){
     findElement("garden-item-2").innerHTML=`You did it! You grew ${crops[2]}`
-    findElement("points-to-crop").textContent=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
+    findElement("points-to-crop").innerHTML=`You are ${200-totalPoints} points from successfully growing ${crops[3]}!`
     
     } else if (totalPoints > 200 && totalPoints < 209){
     findElement("garden-item-1").innerHTML=`Look at you grow! You did it, you grew ${crops[3]}!`
-    
-    findElement("points-to-crop").textContent=""
+    findElement("points-to-crop").innerHTML=""
     findElement("crops-grown").innerHTML="You did it! Your garden is complete!";
     pointsArray.splice(0,pointsArray.length);
-    findElement("garden-item-1").innerHTML=""
-    findElement("garden-item-2").innerHTML=""
-    findElement("garden-item-3").innerHTML=""
-    findElement("garden-item-4").innerHTML=""
+    findElement("garden-item-1").innerHTML="";
+    findElement("garden-item-2").innerHTML="";
+    findElement("garden-item-3").innerHTML="";
+    findElement("garden-item-4").innerHTML="";
+    findElement("game-messages").innerHTML="Nice work!"
     } 
 
     gameOverCombo();
@@ -165,27 +151,7 @@ spinBtn.addEventListener("click",function(event){
 })
 
 
-newGame.addEventListener("click",function(event){
-    event.preventDefault();
-    display1.innerHTML = "-"
-    display2.innerHTML = "-"
-    display3.innerHTML = "-"
 
-    pointsArray.splice(0,pointsArray.length);
-    findElement("garden-item-1").innerHTML=""
-    findElement("garden-item-2").innerHTML=""
-    findElement("garden-item-3").innerHTML=""
-    findElement("garden-item-4").innerHTML="Your garden is empty!"
-
-    
-    
-    findElement("points-to-crop").textContent=""
-    scoreBoard.innerHTML=""
-    findElement("crops-grown").innerHTML=""
-    
-
-})
-   
 
 
 
