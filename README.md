@@ -49,7 +49,7 @@ Moving forward, there are a lot of elements I would like to upgrade and add to t
 
 The biggest thing I felt like I struggled with was the internal organization of my HTML & JavaScript documents. I feel like my JS code could be dryer. Gaining a better understanding of best use cases regarding OOP and classes, arrays, objects, functions, loops, etc., will help me further evolve this project to be porfolio ready.
 
-Another learning point for me is that sometimes it really is that simple and google first if you aren't sure, especially if you have a deadline. I spent a solid 3-4 hours trying to figure out why using a loop to sum an array inside and outside of my event handler function was not working properly. After multiple Error 5 messages, I remembered there was a built in method that sums arrays. A quick google search helped me write a working function in less than 5 minutes...and that is just one of the times that happend during this project.
+Other learning points for me were that sometimes it really is that simple and google first if you aren't sure, especially if you have a deadline.
 
 Any and all feeback is welcome!! If you have any ideas or suggestions submit an issue in this repository!
 
