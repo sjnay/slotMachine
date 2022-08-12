@@ -2,10 +2,11 @@
 
 ## Game Description
 
-This slot machine is a little bit different than normal. There is no betting, but it is still completly based on luck.
-Overview: A user will spin the machine in an attempt to "grow" crops for a garden.
+This slot machine is a little bit different than normal. There is no betting, but it is still completely based on luck.
+
+A user will "spin" the machine in an attempt to "grow" crops for a garden.
 There are 12 items all with different point values: 9 items that are positive points, 3 items are negative points.
-There is one specific item combination that destroys the garden and starts the game over. It takes 50 points to grow one crop and you win by growing four crops.
+There is one specific item combination that destroys the garden and starts the game over. It takes 50 points to grow one crop and you complete your garden by growing four crops.
 User will see an overview of the game towards the top of the screen. As they grow their garden they will be able to watch the crops accumulate. 
 
 ## Game Pictures
@@ -25,3 +26,39 @@ The combination of weeds, pests and critters is game ending. This is the screen 
 
 
 ## Game Link
+
+https://sjnay.github.io/slotMachine/
+
+## Resources 
+
+w3Schools***
+MDN Web Docs
+stackoverflow
+
+## Technologies 
+
+HTML
+CSS 
+JavaScript
+
+## Next Steps - Garden Games
+
+Moving forward, there are a lot of elements I would like to upgrade and add to this game. The first being pictures of items instead of just words. My initial vision was to have the pictures in each lane as a vertical carousel and spin like a real slot machine. Also having each of the lanes stop one after the other. A feature I would want to add is having pictures of the crops pop up once the certain amount of points is reached. Lastly, figuring out a way to have the points for each item pop up and float away so the user has a better idea of the point system. 
+
+## Next Steps - Learning
+
+The biggest thing I felt like I struggled with was the internal organization of my HTML & JavaScript documents. I feel like my JS code could be dryer. Gaining a better understanding of best use cases regarding OOP and classes, arrays, objects, functions, loops, etc., will help me further evolve this project to be porfolio ready.
+
+Another learning point for me is that sometimes it really is that simple and google first if you aren't sure, especially if you have a deadline. I spent a solid 3-4 hours trying to figure out why using a loop to sum an array inside and outside of my event handler function was not working properly. After multiple Error 5 messages, I remembered there was a built in method that sums arrays. A quick google search helped me write a working function in less than 5 minutes...and that is just one of the times that happend during this project.
+
+Any and all feeback is welcome!! If you have any ideas or suggestions submit an issue in this repository!
+
+
+
+
+
+
+
+
+
+

@@ -3,10 +3,8 @@ console.log("js loaded"); //test
 // global variables - spin button, get random number(1-10) 
 // playGame function that s random number in each of the "lanes" when spin btn is clicked
 // have each random number correspond to a picture and point system
-// use a class for pictures and point system
 // how to "win"
-// pop ups for certain winning combos
-// reset button
+
 
 //global variables
 const spinBtn=document.getElementById("spin");
@@ -33,6 +31,7 @@ const pointsLane3 =[2,1,-2,1];
 const crops=["Tomatoes","Marigolds","Cucumbers","Sunflowers"]
 let pointsArray = []
 
+// three lanes with only 4 items because 3 lanes with 12 items would take too long. could be modified later.
 function keepScoreLane1(){
     if (display1.innerHTML === itemsLane1[0]) { //sun
         pointsArray.push(pointsLane1[0]); //3
@@ -63,8 +62,6 @@ function keepScoreLane3(){
     } else  pointsArray.push(pointsLane1[3]); //soil 
     
 }
-
-
 
 function gameOverCombo(){
     if (display1.innerHTML === itemsLane1[2] && display2.innerHTML === itemsLane2[2] && display3.innerHTML ===itemsLane3[2]){
@@ -105,7 +102,7 @@ spinBtn.addEventListener("click",function(event){
       (previousValue, currentValue) => previousValue + currentValue,
       initialValue
     );
-    //scoreBoard.innerHTML=totalPoints;
+    
     
     // player status and point up dates
     
