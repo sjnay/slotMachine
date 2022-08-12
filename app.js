@@ -1,6 +1,6 @@
 console.log("js loaded"); //test
 
-// global variables - spin button, get random number(1-10) 
+// global variables - spin button, get random number 
 // playGame function that s random number in each of the "lanes" when spin btn is clicked
 // have each random number correspond to a picture and point system
 // how to "win"
@@ -10,16 +10,13 @@ console.log("js loaded"); //test
 const spinBtn=document.getElementById("spin");
 const newGame=document.getElementById("new-game");
 
-
-
-// generate a random number between 0&4
+// generate a random number between 0&3
 function randomNumber(){ 
     return Math.floor(Math.random()*4);
 }
-// finds display lanes in html
+// shortcut essentially
 function findElement(id){
     return document.getElementById(id);
-
 }
 
 const itemsLane1 =["Sun","Tools","Weeds","Gnome"];
@@ -31,7 +28,7 @@ const pointsLane3 =[2,1,-2,1];
 const crops=["Tomatoes","Marigolds","Cucumbers","Sunflowers"]
 let pointsArray = []
 
-// three lanes with only 4 items because 3 lanes with 12 items would take too long. could be modified later.
+// three lanes with only 4 items for times sake and to increase probability of a loss. could be modified later.
 function keepScoreLane1(){
     if (display1.innerHTML === itemsLane1[0]) { //sun
         pointsArray.push(pointsLane1[0]); //3
@@ -90,21 +87,22 @@ spinBtn.addEventListener("click",function(event){
     display2.innerHTML = `${itemsLane2[randomNumber()]}`;
     display3.innerHTML = `${itemsLane3[randomNumber()]}`;
 
+    // conditionals that apply to ^^^ and push point value into pointsArray
+
     keepScoreLane1(); 
     keepScoreLane2();
     keepScoreLane3();
     
-    
     // keeping score by pushing each value associated with them items to an array and using reduce 
-    // function to keep a running total
+    // method to keep a running total
+    
     const initialValue = 0;
     let totalPoints = pointsArray.reduce(
       (previousValue, currentValue) => previousValue + currentValue,
       initialValue
     );
-    
-    
-    // player status and point up dates
+
+    // player status and point updates
     
     if(totalPoints<50){
     findElement("crops-grown").innerHTML="Your garden is empty!"   

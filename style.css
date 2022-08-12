@@ -1,7 +1,7 @@
 body {
     font-family: 'Acme', sans-serif;
-    color:white;
-    background-color: #acc89d
+    color:#e8e8e5;
+    background-color: #acc89d;
 }
 
 h1{
@@ -11,6 +11,7 @@ h1{
     margin-bottom: 5px;
     color: #efc27c;
 }
+
 .gameinfo{
     text-align: center;
     color:#9cc9f1;
@@ -20,8 +21,8 @@ h1{
     border: 5px dotted #ab8350;
     width: fit-content;
     background-color: #edece1;
-
 }
+
 .outer-display-container{
     background-color: #ab8350;
     padding:10px;
@@ -32,6 +33,7 @@ h1{
     border-radius: 10px;
     border: 2px outset #ab8350;
 }
+
 .light-container{
     text-align: center;
     height:13px;
@@ -39,12 +41,11 @@ h1{
     margin:auto;
     padding-top:10px;
 }
+
 .light-container2{
     text-align: center;
     padding-top: 5px;
     margin: auto;
-
-
 }
 
 .lightsr{
@@ -58,13 +59,12 @@ h1{
     box-shadow: 2px 3px 4px rgb(234, 226, 226);
     border:.5px outset rgb(52, 50, 50);
 }
+
 .u{
     box-shadow: -2px -3px 4px rgb(239, 237, 237);
     border:.5px outset rgb(52, 50, 50);
 }
   
-
-
 .display-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -76,7 +76,6 @@ h1{
     border-radius: 5px;
     box-shadow: 3px 2px 2px rgb(123, 110, 110);
     border: 1px outset #1c1c1d;
-
 }   
 
 .display{
@@ -100,8 +99,6 @@ h1{
     font-size: 1.5em;
     border-radius: 0 0 10px 10px;
     border: 2px outset #b7bbbf;
-    
-
 }
 
 .crops{
@@ -109,7 +106,6 @@ h1{
     list-style: none;
     margin: auto;
     padding:5px;
-    
 }
 
 form{
@@ -131,7 +127,7 @@ form{
     border: none;
     box-shadow: 2px 2px 2px 2px #1c1c1d;
     text-shadow: 1px 2px   #20201f;
-    transition-duration: .1s;
+    transition-duration: .2s;
 }
 
 .gamebtn:hover{
@@ -139,20 +135,17 @@ form{
     color:#edece1;
 }
 
-
-
-
 .stats{
     text-overflow:wrap;
     margin: auto;
     padding:5px;
 
 }
+
 .stats2{
     padding-top:35px;
     margin:auto;
     font-size: 1.5em;
-    
 }
 
 
