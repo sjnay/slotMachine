@@ -13,13 +13,13 @@ h1{
 }
 .gameinfo{
     text-align: center;
-    color:#b2d3ef;
+    color:#9cc9f1;
     padding:5px;
     margin:auto;
     font-size: 1.25em;
     border: 5px dotted #ab8350;
     width: fit-content;
-    background-color: #a5a59a;
+    background-color: #edece1;
 
 }
 .outer-display-container{
