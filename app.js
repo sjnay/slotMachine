@@ -77,7 +77,7 @@ function gameOverCombo(){
         findElement("garden-item-2").innerHTML="";
         findElement("garden-item-3").innerHTML="";
         findElement("garden-item-4").innerHTML="";
-        findElement("points-to-crop").innerHTML="Bummer! Your garden is dead!\nTry again!";
+        findElement("points-to-crop").innerHTML="Bummer!";
         
     }
 }
