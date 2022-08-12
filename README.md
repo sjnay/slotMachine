@@ -10,3 +10,6 @@ your garden and starts the game over. It takes 10 points to grow one crop and yo
 
 User will see an overview of the game towards the top of the screen. As they grow their garden they will be able to watch their points accumulate. 
 Certain items, item combinations, and total point values will be accompanied with motivational messages and animations. 
+
+
+

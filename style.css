@@ -1,7 +1,7 @@
 body {
     font-family: 'Acme', sans-serif;
     color:white;
-    background-color: #edece1;
+    background-color: #acc89d
 }
 
 h1{
@@ -39,6 +39,13 @@ h1{
     margin:auto;
     padding-top:10px;
 }
+.light-container2{
+    text-align: center;
+    padding-top: 5px;
+    margin: auto;
+
+
+}
 
 .lightsr{
     background-color: rgb(248, 248, 124);
@@ -48,7 +55,11 @@ h1{
     border-radius: 35px;
     font-size: .75em;
     color:rgb(248, 248, 124);
-    box-shadow: 2px 2px 2px rgb(255, 255, 255);
+    box-shadow: 2px 3px 4px rgb(234, 226, 226);
+    border:.5px outset rgb(52, 50, 50);
+}
+.u{
+    box-shadow: -2px -3px 4px rgb(239, 237, 237);
     border:.5px outset rgb(52, 50, 50);
 }
   
@@ -69,7 +80,7 @@ h1{
 }   
 
 .display{
-    background-color: #acc89d;
+    background-color: #efc27c;
     margin:5%;
     border: 1px solid #b4c6ab;
     box-shadow: 3px -2px 2px rgb(91, 88, 88);
@@ -87,14 +98,14 @@ h1{
     height: 350px;
     margin: auto;
     font-size: 1.5em;
-    border-radius: 2px;
-    border: 2px outset #b2d3ef;
+    border-radius: 0 0 10px 10px;
+    border: 2px outset #b7bbbf;
     
 
 }
 
 .crops{
-    grid-column: 3 ;
+    grid-column: 3;
     list-style: none;
     margin: auto;
     padding:5px;
@@ -124,7 +135,7 @@ form{
 }
 
 .gamebtn:hover{
-    background-color:#efc27c;
+    background-color:#acc89d;
     color:#edece1;
 }
 
