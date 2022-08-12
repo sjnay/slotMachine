@@ -14,39 +14,53 @@
 </head>
 <body>
     <h1>Garden Games</h1>
-    <div class="gameinfo-container">
-        
-        <div class="scoreboard">How it works: Click the Grow button to </div>
-        
-    </div>
+    <div class="gameinfo">Click the Grow button to begin earning points. 
+    Once you earn enough points you will harvest a crop. Harvest 4 crops and your 
+    garden is complete!<br>Watch out for the weeds, 
+    critters, and pests that destroy your garden!<br><strong>Lets Grow!</strong></div>
+
  <!--Panel that displays how to play--->
+ <div class="light-container">
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ <div class="lightsr">stae</div>
+ </div>
 
-
-    
-    <div class="outer-display-container">
+<div class="outer-display-container">
         <div class="display-container">
             <p class="display" id="display1">-</p>
             <p class="display" id="display2">-</p>
             <p class="display" id="display3">-</p>
         </div>
+        <form>
+            <button class="gamebtn active" id="spin">Grow</button>
+        </form> 
+    </div>
         <div class="player-stats">
             <p class="stats" id="points-to-crop"></p>
-            <p class="stats" id="crops-grown"></p>
-                <ul id="crops-grown-list">
+            <p class="stats2" id="crops-grown"></p>
+                <ul class="crops" id="crops-grown-list">
                     <li id="garden-item-1"></li>
                     <li id="garden-item-2"></li>
                     <li id="garden-item-3"></li>
-                    <li id="garden-item-4">Your garden is empty!</li>
+                    <li id="garden-item-4"></li>
                 </ul>
-            <p id="game-messages"></p>
-            <p class="stats" id="total-points"></p>
         </div>
    </div>
-        <div class="spin-and-reset"><!--Container:Spin button and Reset button(form??)-->
-            <form>
-            <button class="gamebtn" id="spin">Grow</button>
-            </form> 
-        </div>
+
 
 </body>
 </html>
